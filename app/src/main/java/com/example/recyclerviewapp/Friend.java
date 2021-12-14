@@ -1,16 +1,26 @@
 package com.example.recyclerviewapp;
 
 public class Friend {
+    private int Id;
     private String Name;
     private String City;
     private int dob;
     private int Image;
 
-    public Friend(String name, String city, int dob, int image) {
+    public Friend(int id, String name, int dob, String city, int image) {
+        Id = id;
         Name = name;
         City = city;
         this.dob = dob;
         Image = image;
+    }
+
+    public int getId() {
+        return Id;
+    }
+
+    public void setId(int id) {
+        Id = id;
     }
 
     public String getName() {
@@ -44,4 +54,6 @@ public class Friend {
     public void setImage(int image) {
         Image = image;
     }
+
+
 }
