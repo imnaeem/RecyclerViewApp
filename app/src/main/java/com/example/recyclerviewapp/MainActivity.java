@@ -40,7 +40,7 @@ public class MainActivity extends AppCompatActivity {
                 Friend[]{f0, f1, f2, f3, f4, f5, f6, f7, f8, f9, f10, f11, f0, f1, f2, f3, f4, f5, f6, f7, f8, f9, f10, f11, f0, f1, f2, f3, f4, f5, f6, f7, f8, f9, f10, f11}));
 
         recyclerView = findViewById(R.id.myRecyclerView);
-        //recyclerView.setHasFixedSize(true);
+        recyclerView.setHasFixedSize(true);
         layoutManager = new LinearLayoutManager(MainActivity.this);
         recyclerView.setLayoutManager(layoutManager);
         adapter = new myRecyclerViewAdapter(friendsList);
