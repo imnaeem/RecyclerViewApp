@@ -13,10 +13,6 @@ import java.util.List;
 
 public class MainActivity extends AppCompatActivity {
 
-    private RecyclerView recyclerView;
-    private RecyclerView.Adapter adapter;
-    private RecyclerView.LayoutManager layoutManager;
-
     List<Friend> friendsList = new ArrayList<>();
 
     @Override
@@ -36,20 +32,26 @@ public class MainActivity extends AppCompatActivity {
         Friend f10 = new Friend(11, "Junaid", 1977, "Islamabad", R.drawable.person);
         Friend f11 = new Friend(12, "Waseem", 1967, "Rawalpindi", R.drawable.person);
 
-        friendsList.addAll(Arrays.asList(new
-                Friend[]{f0, f1, f2, f3, f4, f5, f6, f7, f8, f9, f10, f11, f0, f1, f2, f3, f4, f5, f6, f7, f8, f9, f10, f11, f0, f1, f2, f3, f4, f5, f6, f7, f8, f9, f10, f11}));
+        friendsList.addAll(Arrays.asList(f0, f1, f2, f3, f4, f5, f6, f7, f8, f9, f10, f11, f0, f1, f2, f3, f4, f5, f6, f7, f8, f9, f10, f11, f0, f1, f2, f3, f4, f5, f6, f7, f8, f9, f10, f11));
 
-        recyclerView = findViewById(R.id.myRecyclerView);
-        recyclerView.setHasFixedSize(true);
-        layoutManager = new LinearLayoutManager(MainActivity.this);
-        recyclerView.setLayoutManager(layoutManager);
-        adapter = new myRecyclerViewAdapter(friendsList);
+        RecyclerView recyclerView = findViewById(R.id.myRecyclerView);
+        //recyclerView.setHasFixedSize(true);
+
+        RecyclerView.Adapter adapter = new myRecyclerViewAdapter(friendsList);
         recyclerView.setAdapter(adapter);
 
-        layoutManager = new LinearLayoutManager(MainActivity.this, LinearLayoutManager.HORIZONTAL, false);
-        //layoutManager = new LinearLayoutManager(MainActivity.this, LinearLayoutManager.VERTICAL, false);
-        //GridLayoutManager layoutManagerGrid = new GridLayoutManager(this, 2);
+        RecyclerView.LayoutManager layoutManager = new LinearLayoutManager(MainActivity.this, LinearLayoutManager.HORIZONTAL, false);
         recyclerView.setLayoutManager(layoutManager);
+
+        RecyclerView recyclerView2 = findViewById(R.id.myRecyclerView2);
+        recyclerView2.setAdapter(adapter);
+
+        RecyclerView.LayoutManager layoutManager2 = new LinearLayoutManager(MainActivity.this);
+        recyclerView2.setLayoutManager(layoutManager2);
+
+        //GridLayoutManager layoutManagerGrid = new GridLayoutManager(this, 2);
+        //recyclerView.setLayoutManager(layoutManager);
+
 
     }
 }
